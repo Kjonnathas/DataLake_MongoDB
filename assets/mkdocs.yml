@@ -1,6 +1,13 @@
-site_name: Documentação Projeto Extração de API com Armazenamento no MongoDB e no MySQL
+site_name: Documentação do Projeto de Comparação de Ações
 theme:
   name: material
+  features:
+    - mermaid2
+site_url: https://Kjonnathas.github.io/DataLake_MongoDB/
 nav:
-  - Home: index.md
-  - Guia de Usuário: guia.md
+  - Home: home.md
+  - Extração de Dados: extracao_dados.md
+  - Visualização e Gráficos: visualizacao.md
+plugins:
+  - search
+  - mermaid2
