@@ -7,6 +7,7 @@ import pandas as pd
 import pyodbc
 import logging
 from datetime import datetime
+from typing import List
 
 load_dotenv()
 
@@ -26,7 +27,7 @@ logging.basicConfig(
 
 
 def extract_data_yfinance(
-    ticker_list: list, start_data: str, end_data: str
+    ticker_list: List, start_data: str, end_data: str
 ) -> list | None:
     """
     Extrai dados históricos de ações do Yahoo Finance para uma lista de tickers fornecidos.
@@ -71,7 +72,7 @@ def extract_data_yfinance(
         return None
 
 
-def transform_dataframe(df_list: list) -> pd.DataFrame | None:
+def transform_dataframe(df_list: List) -> pd.DataFrame | None:
     """
     Transforma uma lista de DataFrames em um único DataFrame consolidado.
 
@@ -103,6 +104,35 @@ def connect_to_mongo(uri: str, database: str) -> Database:
     database = client[database]
 
     return database
+
+
+def delete_data_from_mongo(database: str) -> None:
+    """
+    Remove todas as coleções de um banco de dados MongoDB.
+
+    Args:
+    -----
+        database (str): Instância do banco de dados MongoDB de onde as coleções serão removidas.
+
+    Returns:
+    --------
+        None: A função não retorna nenhum valor. Registra mensagens no log sobre o status da operação.
+
+    Notas:
+    ------
+        - A função itera por todas as coleções do banco de dados e as remove completamente usando o método `drop`.
+        - Diferentemente de `delete_many`, que remove apenas documentos, o método `drop` exclui a coleção inteira.
+        - Mensagens de sucesso ou erros são registradas no sistema de logging.
+    """
+    try:
+        for collection_name in database.list_collection_names():
+            collection = database[collection_name]
+            collection.drop()
+            logging.info("Operação de exclusão de coleções efetuada com sucesso!")
+    except Exception as e:
+        logging.error(
+            f"Ocorreu um erro durante a operação de exclusão de coleções no MongoDB.\n\nErro: {e}"
+        )
 
 
 def load_to_mongo(dataframe: pd.DataFrame, database: str, uri: str) -> None:
@@ -157,7 +187,7 @@ def load_to_mongo(dataframe: pd.DataFrame, database: str, uri: str) -> None:
                     }
                 )
 
-            # database[ticker].insert_many(document_list)
+            database[ticker].insert_many(document_list)
 
             logging.info(f"Dados de {ticker} registrados com sucesso!")
 
@@ -226,7 +256,8 @@ def load_to_mysql(con: pyodbc.Connection, dataframe: pd.DataFrame) -> None:
         try:
             cursor = con.cursor()
 
-            cursor.execute("""
+            cursor.execute(
+                """
             CREATE TABLE IF NOT EXISTS tbl_historico_acoes (
                 id INT PRIMARY KEY AUTO_INCREMENT,
                 ticker VARCHAR(10) NOT NULL,
@@ -236,8 +267,11 @@ def load_to_mysql(con: pyodbc.Connection, dataframe: pd.DataFrame) -> None:
                 low FLOAT NOT NULL,
                 volume FLOAT NOT NULL,
                 data DATE NOT NULL
+            );
+            TRUNCATE TABLE tbl_historico_acoes;
+            """,
+                multi=True,
             )
-            """)
 
             for _, row in df.iterrows():
                 cursor.execute(
@@ -268,7 +302,7 @@ def load_to_mysql(con: pyodbc.Connection, dataframe: pd.DataFrame) -> None:
             con.close()
 
 
-if __name__ == "__main__":
+def main(tickers: List, start_data: str, end_data: str) -> None:
     driver = os.getenv("MYSQL_DRIVER")
     server = os.getenv("MYSQL_SERVER")
     database = os.getenv("MYSQL_DATABASE")
@@ -277,6 +311,15 @@ if __name__ == "__main__":
     mongo_uri = os.getenv("MONGO_URI")
     mongo_db = os.getenv("MONGO_DATABASE")
 
+    data = extract_data_yfinance(tickers, start_data=start_data, end_data=end_data)
+    delete_data_from_mongo(mongo_db)
+    transform_data = transform_dataframe(data)
+    load_to_mongo(transform_data, mongo_db, mongo_uri)
+    conn_mysql = connect_to_mysql(driver, server, database, username, password)
+    load_to_mysql(conn_mysql, transform_data)
+
+
+if __name__ == "__main__":
     tickers = [
         "EQTL3.SA",
         "PETR4.SA",
@@ -296,10 +339,4 @@ if __name__ == "__main__":
         "GGBR4.SA",
     ]
 
-    data = extract_data_yfinance(
-        tickers, start_data="2010-01-01", end_data="2020-12-31"
-    )
-    transform_data = transform_dataframe(data)
-    load_to_mongo(transform_data, mongo_db, mongo_uri)
-    conn_mysql = connect_to_mysql(driver, server, database, username, password)
-    load_to_mysql(conn_mysql, transform_data)
+    main(tickers=tickers, start_data="2010-01-01", end_data="2024-11-30")
