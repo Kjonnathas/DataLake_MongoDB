@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../home/" rel="prev"/>
+<link href="../visualizacao/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>Extração de Dados - Documentação do Projeto de Comparação de Ações</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#script-de-integracao-e-transformacao-de-dados-com-yahoo-finance-mongodb-e-mysql">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Documentação do Projeto de Comparação de Ações" class="md-header__button md-logo" data-md-component="logo" href=".." title="Documentação do Projeto de Comparação de Ações">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentação do Projeto de Comparação de Ações
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Extração de Dados
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentação do Projeto de Comparação de Ações" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Documentação do Projeto de Comparação de Ações">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Documentação do Projeto de Comparação de Ações
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../home/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Extração de Dados
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Extração de Dados
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descricao-geral">
+<span class="md-ellipsis">
+      Descrição Geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bibliotecas-utilizadas">
+<span class="md-ellipsis">
+      Bibliotecas Utilizadas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estrutura-do-script">
+<span class="md-ellipsis">
+      Estrutura do Script
+    </span>
+</a>
+<nav aria-label="Estrutura do Script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-configuracao-de-logging">
+<span class="md-ellipsis">
+      1. Configuração de Logging
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-funcoes-do-script">
+<span class="md-ellipsis">
+      2. Funções do Script
+    </span>
+</a>
+<nav aria-label="2. Funções do Script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-extract_data_yfinance">
+<span class="md-ellipsis">
+      2.1. extract_data_yfinance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-transform_dataframe">
+<span class="md-ellipsis">
+      2.2. transform_dataframe
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-connect_to_mongo">
+<span class="md-ellipsis">
+      2.3. connect_to_mongo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-delete_data_from_mongo">
+<span class="md-ellipsis">
+      2.4. delete_data_from_mongo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-load_to_mongo">
+<span class="md-ellipsis">
+      2.5. load_to_mongo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26-connect_to_mysql">
+<span class="md-ellipsis">
+      2.6. connect_to_mysql
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#27-load_to_mysql">
+<span class="md-ellipsis">
+      2.7. load_to_mysql
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#28-main">
+<span class="md-ellipsis">
+      2.8. main
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-variaveis-de-ambiente-utilizadas">
+<span class="md-ellipsis">
+      3. Variáveis de Ambiente Utilizadas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-execucao">
+<span class="md-ellipsis">
+      4. Execução
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-exemplo-de-uso">
+<span class="md-ellipsis">
+      5. Exemplo de Uso
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-notas-adicionais">
+<span class="md-ellipsis">
+      6. Notas Adicionais
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../visualizacao/">
+<span class="md-ellipsis">
+    Visualização e Gráficos
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#descricao-geral">
+<span class="md-ellipsis">
+      Descrição Geral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bibliotecas-utilizadas">
+<span class="md-ellipsis">
+      Bibliotecas Utilizadas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#estrutura-do-script">
+<span class="md-ellipsis">
+      Estrutura do Script
+    </span>
+</a>
+<nav aria-label="Estrutura do Script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-configuracao-de-logging">
+<span class="md-ellipsis">
+      1. Configuração de Logging
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-funcoes-do-script">
+<span class="md-ellipsis">
+      2. Funções do Script
+    </span>
+</a>
+<nav aria-label="2. Funções do Script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-extract_data_yfinance">
+<span class="md-ellipsis">
+      2.1. extract_data_yfinance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-transform_dataframe">
+<span class="md-ellipsis">
+      2.2. transform_dataframe
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-connect_to_mongo">
+<span class="md-ellipsis">
+      2.3. connect_to_mongo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-delete_data_from_mongo">
+<span class="md-ellipsis">
+      2.4. delete_data_from_mongo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-load_to_mongo">
+<span class="md-ellipsis">
+      2.5. load_to_mongo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26-connect_to_mysql">
+<span class="md-ellipsis">
+      2.6. connect_to_mysql
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#27-load_to_mysql">
+<span class="md-ellipsis">
+      2.7. load_to_mysql
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#28-main">
+<span class="md-ellipsis">
+      2.8. main
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-variaveis-de-ambiente-utilizadas">
+<span class="md-ellipsis">
+      3. Variáveis de Ambiente Utilizadas
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-execucao">
+<span class="md-ellipsis">
+      4. Execução
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-exemplo-de-uso">
+<span class="md-ellipsis">
+      5. Exemplo de Uso
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-notas-adicionais">
+<span class="md-ellipsis">
+      6. Notas Adicionais
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="script-de-integracao-e-transformacao-de-dados-com-yahoo-finance-mongodb-e-mysql">Script de Integração e Transformação de Dados com Yahoo Finance, MongoDB e MySQL</h1>
+<h2 id="descricao-geral">Descrição Geral</h2>
+<p>Este script realiza a extração de dados históricos de ações da API do Yahoo Finance, transformação e carregamento dos dados para bancos de dados MongoDB e MySQL. Ele é dividido em várias funções modulares que implementam o processo ETL (Extração, Transformação e Carregamento).</p>
+<h2 id="bibliotecas-utilizadas">Bibliotecas Utilizadas</h2>
+<ul>
+<li><code>pymongo</code>: Conecta-se ao MongoDB para operações de leitura e escrita.</li>
+<li><code>dotenv</code>: Carrega variáveis de ambiente de um arquivo .env.</li>
+<li><code>os</code>: Manipula caminhos e acessa variáveis do ambiente.</li>
+<li><code>yfinance</code>: Extrai dados financeiros do Yahoo Finance.</li>
+<li><code>pandas</code>: Manipula e transforma os dados extraídos.</li>
+<li><code>pyodbc</code>: Conecta-se a bancos de dados via ODBC.</li>
+<li><code>logging</code>: Registra logs de eventos e erros durante a execução.</li>
+<li><code>datetime</code>: Manipula datas.</li>
+<li><code>typing</code>: Define tipos para argumentos e retornos das funções.</li>
+</ul>
+<h2 id="estrutura-do-script">Estrutura do Script</h2>
+<h3 id="1-configuracao-de-logging">1. Configuração de Logging</h3>
+<p>O sistema de logs registra eventos e erros em um arquivo localizado em um caminho especificado pela variável de ambiente <code>LOG_PATH</code>. O nome do arquivo inclui a data atual no formato <code>log_main_DIA_MES_ANO.log</code>.</p>
+<pre><code class="language-bash">logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filename=os.path.join(log_path, f"log_main_{day}_{month}_{year}.log"),
+    filemode="a",
+)
+</code></pre>
+<h3 id="2-funcoes-do-script">2. Funções do Script</h3>
+<h4 id="21-extract_data_yfinance">2.1. extract_data_yfinance</h4>
+<p>Extrai dados históricos de ações para uma lista de tickers fornecidos.</p>
+<p>Entradas:</p>
+<ul>
+<li><code>ticker_list</code> (List): Lista de tickers.</li>
+<li><code>start_data</code> (str): Data inicial no formato <code>YYYY-MM-DD</code>.</li>
+<li><code>end_data</code> (str): Data final no formato <code>YYYY-MM-DD</code>.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li>Uma lista de DataFrames contendo os dados históricos para cada ticker, ou <code>None</code> em caso de erro.</li>
+</ul>
+<h4 id="22-transform_dataframe">2.2. transform_dataframe</h4>
+<p>Consolida uma lista de DataFrames em um único DataFrame.</p>
+<p>Entrada:</p>
+<ul>
+<li><code>df_list</code> (List): Lista de DataFrames a serem concatenados.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li><code>DataFrame</code> consolidado ou <code>None</code> caso a lista esteja vazia.</li>
+</ul>
+<h4 id="23-connect_to_mongo">2.3. connect_to_mongo</h4>
+<p>Estabelece conexão com um banco de dados MongoDB.</p>
+<p>Entradas:</p>
+<ul>
+<li><code>uri</code> (str): URI de conexão para o MongoDB.</li>
+<li><code>database</code> (str): Nome do banco de dados.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li>Objeto <code>Database</code> representando o banco conectado.</li>
+</ul>
+<h4 id="24-delete_data_from_mongo">2.4. delete_data_from_mongo</h4>
+<p>Remove todas as coleções de um banco de dados MongoDB.</p>
+<p>Entrada:</p>
+<ul>
+<li><code>database</code> (str): Nome do banco de dados MongoDB.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li>Nenhuma. Mensagens de sucesso ou erro são registradas nos logs.</li>
+</ul>
+<h4 id="25-load_to_mongo">2.5. load_to_mongo</h4>
+<p>Carrega dados de um DataFrame para um banco MongoDB.</p>
+<p>Entradas:</p>
+<ul>
+<li><code>dataframe</code> (pd.DataFrame): Dados a serem carregados.</li>
+<li><code>database</code> (str): Nome do banco.</li>
+<li><code>uri</code> (str): URI de conexão.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li>Nenhuma. Cria coleções separadas para cada ticker no MongoDB.</li>
+</ul>
+<h4 id="26-connect_to_mysql">2.6. connect_to_mysql</h4>
+<p>Conecta-se a um banco de dados MySQL usando pyodbc.</p>
+<p>Entradas:</p>
+<ul>
+<li><code>driver</code> (str): Driver ODBC.</li>
+<li><code>server</code> (str): Endereço ou nome do servidor.</li>
+<li><code>db</code> (str): Nome do banco.</li>
+<li><code>user</code> (str): Nome do usuário.</li>
+<li><code>password</code> (str): Senha do usuário.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li>Objeto de conexão pyodbc.Connection.</li>
+</ul>
+<h4 id="27-load_to_mysql">2.7. load_to_mysql</h4>
+<p>Carrega dados de um DataFrame em uma tabela MySQL.</p>
+<p>Entradas:</p>
+<ul>
+<li><code>con</code> (pyodbc.Connection): Objeto de conexão com MySQL.</li>
+<li><code>dataframe</code> (pd.DataFrame): Dados a serem carregados.</li>
+</ul>
+<p>Saída:</p>
+<ul>
+<li>Nenhuma. Cria a tabela tbl_historico_acoes e insere os dados.</li>
+</ul>
+<h4 id="28-main">2.8. main</h4>
+<p>Função principal que coordena todas as etapas do processo ETL.</p>
+<p>Entradas:</p>
+<ul>
+<li><code>tickers</code> (List): Lista de tickers.</li>
+<li><code>start_data</code> (str): Data inicial.</li>
+<li><code>end_data</code> (str): Data final.</li>
+</ul>
+<p>Fluxo:</p>
+<ol>
+<li>Extrai dados de ações.</li>
+<li>Remove dados antigos do MongoDB.</li>
+<li>Transforma os dados em um DataFrame consolidado.</li>
+<li>Carrega os dados no MongoDB.</li>
+<li>Carrega os dados no MySQL.</li>
+</ol>
+<div class="mermaid">graph TD
+A[Início] --&gt; B[Extrair Dados com yFinance]
+B --&gt; C[Transformar Dados em DataFrame Consolidado]
+C --&gt; D[Excluir Dados no MongoDB]
+D --&gt; E[Carregar Dados no MongoDB]
+E --&gt; F[Conectar ao MySQL]
+F --&gt; G[Carregar Dados no MySQL]
+G --&gt; H[Fim]
+subgraph "Detalhes de Extração"
+B1[Recebe Lista de Tickers]
+B2[Chama API yFinance]
+B3[Enriquece com Ticker e Data]
+B --&gt; B1 --&gt; B2 --&gt; B3
+end
+subgraph "Processo de Carga MongoDB"
+E1[Conecta ao MongoDB]
+E2[Cria Documentos]
+E3[Insere por Coleção]
+E --&gt; E1 --&gt; E2 --&gt; E3
+end
+subgraph "Processo de Carga MySQL"
+G1[Conecta ao Banco]
+G2[Cria Tabela se Não Existe]
+G3[Trunca Tabela]
+G4[Insere Linhas no Banco]
+F --&gt; G1 --&gt; G2 --&gt; G3 --&gt; G4
+end
+</div>
+<h3 id="3-variaveis-de-ambiente-utilizadas">3. Variáveis de Ambiente Utilizadas</h3>
+<ul>
+<li><code>LOG_PATH</code>: Caminho para salvar os logs.</li>
+<li><code>MYSQL_DRIVER</code>, <code>MYSQL_SERVER</code>, <code>MYSQL_DATABASE</code>, <code>MYSQL_USERNAME</code>, <code>MYSQL_PASSWORD</code>: Credenciais e parâmetros do MySQL.</li>
+<li><code>MONGO_URI</code>, <code>MONGO_DATABASE</code>: URI e banco de dados MongoDB.</li>
+</ul>
+<h3 id="4-execucao">4. Execução</h3>
+<p>A execução é iniciada no bloco if <code>__name__ == "__main__":</code>. Uma lista predefinida de tickers é passada para a função main junto com um intervalo de datas.</p>
+<h3 id="5-exemplo-de-uso">5. Exemplo de Uso</h3>
+<pre><code class="language-bash">python script.py
+</code></pre>
+<h3 id="6-notas-adicionais">6. Notas Adicionais</h3>
+<ul>
+<li>Certifique-se de que o arquivo .env contenha todas as variáveis necessárias.</li>
+<li>Instale as bibliotecas requeridas usando pip install -r requirements.txt.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["mermaid2"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
