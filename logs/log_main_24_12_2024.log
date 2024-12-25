@@ -1,0 +1,39 @@
+2024-12-24 22:12:04,689 - INFO - Dados extraídos da api do yfinance com sucesso!
+2024-12-24 22:12:34,087 - INFO - Dados inseridos no banco de dados do MongoDB!
+2024-12-24 22:19:16,997 - INFO - Dados extraídos da api do yfinance com sucesso!
+2024-12-24 22:19:34,221 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-24 22:19:47,669 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-24 22:19:53,876 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-24 22:19:59,422 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-24 22:20:08,934 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-24 22:20:26,534 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-24 22:21:03,030 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-24 22:21:26,981 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-24 22:21:37,306 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-24 22:21:46,079 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-24 22:21:53,415 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-24 22:21:58,126 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-24 22:21:59,094 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-24 22:22:04,143 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-24 22:22:08,164 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-24 22:22:11,305 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-24 22:22:11,305 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-24 22:28:12,625 - INFO - Dados extraídos da api do yfinance com sucesso!
+2024-12-24 22:28:13,124 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-24 22:28:13,152 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-24 22:28:13,157 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-24 22:28:13,162 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-24 22:28:13,167 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-24 22:28:13,171 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-24 22:28:13,176 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-24 22:28:13,180 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-24 22:28:13,185 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-24 22:28:13,190 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-24 22:28:13,196 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-24 22:28:13,201 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-24 22:28:13,204 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-24 22:28:13,208 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-24 22:28:13,212 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-24 22:28:13,217 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-24 22:28:13,217 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-24 22:28:27,572 - INFO - Dados inseridos na tabela com sucesso!
