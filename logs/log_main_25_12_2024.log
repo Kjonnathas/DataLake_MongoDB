@@ -1,0 +1,159 @@
+2024-12-25 20:00:57,128 - INFO - Dados extra�dos da api do yfinance com sucesso!
+2024-12-25 20:00:57,139 - ERROR - Ocorreu um erro durante a opera��o de exclus�o de cole��es no MongoDB.
+
+Erro: 'str' object has no attribute 'list_collection_names'
+2024-12-25 20:01:10,109 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-25 20:01:16,523 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-25 20:01:22,714 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-25 20:01:27,682 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-25 20:01:35,974 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-25 20:01:51,848 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-25 20:01:59,422 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-25 20:02:07,440 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-25 20:02:15,070 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-25 20:02:23,164 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-25 20:02:31,987 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-25 20:02:35,165 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-25 20:02:36,901 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-25 20:02:39,012 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-25 20:02:40,947 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-25 20:02:47,141 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-25 20:02:47,141 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-25 20:07:57,561 - INFO - Dados extra�dos da api do yfinance com sucesso!
+2024-12-25 20:13:20,841 - INFO - Dados extra�dos da api do yfinance com sucesso!
+2024-12-25 20:13:25,092 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:25,402 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:25,706 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:25,953 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:26,437 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:26,844 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:27,755 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:28,063 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:28,274 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:28,575 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:28,882 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:29,198 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:29,497 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:29,804 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:30,027 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:30,239 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:13:40,762 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-25 20:13:49,875 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-25 20:13:57,939 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-25 20:14:04,348 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-25 20:14:12,614 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-25 20:14:21,518 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-25 20:14:28,131 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-25 20:14:38,088 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-25 20:14:45,558 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-25 20:14:49,131 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-25 20:14:53,157 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-25 20:15:00,148 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-25 20:15:05,753 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-25 20:15:17,026 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-25 20:15:21,215 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-25 20:15:24,058 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-25 20:15:24,058 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-25 20:19:06,166 - INFO - Dados extra�dos da api do yfinance com sucesso!
+2024-12-25 20:19:11,924 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:12,154 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:12,419 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:12,924 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:13,132 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:13,356 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:13,558 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:13,972 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:14,379 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:14,685 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:14,899 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:15,101 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:15,404 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:15,814 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:16,121 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:16,325 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:19:27,240 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-25 20:19:34,610 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-25 20:19:39,168 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-25 20:19:42,335 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-25 20:19:45,090 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-25 20:19:48,377 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-25 20:19:55,339 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-25 20:20:02,815 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-25 20:20:10,125 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-25 20:20:13,984 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-25 20:20:16,930 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-25 20:20:19,803 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-25 20:20:24,762 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-25 20:20:32,612 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-25 20:20:41,217 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-25 20:20:49,303 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-25 20:20:49,304 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-25 20:22:42,214 - INFO - Dados extra�dos da api do yfinance com sucesso!
+2024-12-25 20:23:04,699 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:07,421 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:09,456 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:11,766 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:13,701 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:15,640 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:17,501 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:19,752 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:22,077 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:24,052 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:26,229 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:28,573 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:30,933 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:33,837 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:36,136 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:23:39,546 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:24:30,692 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-25 20:24:38,067 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-25 20:24:41,860 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-25 20:24:44,701 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-25 20:24:47,760 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-25 20:24:56,907 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-25 20:25:04,589 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-25 20:25:11,857 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-25 20:25:21,076 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-25 20:25:35,514 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-25 20:25:44,320 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-25 20:25:52,409 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-25 20:25:55,498 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-25 20:26:01,150 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-25 20:26:11,277 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-25 20:26:19,972 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-25 20:26:23,062 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-25 20:29:42,723 - INFO - Dados extra�dos da api do yfinance com sucesso!
+2024-12-25 20:29:45,858 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:46,430 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:47,519 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:47,831 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:48,135 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:48,438 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:48,850 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:49,154 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:49,469 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:49,753 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:49,975 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:50,185 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:50,394 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:50,624 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:50,896 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:29:51,103 - INFO - Opera��o de exclus�o de cole��es efetuada com sucesso!
+2024-12-25 20:30:01,342 - INFO - Dados de EQTL3.SA registrados com sucesso!
+2024-12-25 20:30:08,517 - INFO - Dados de PETR4.SA registrados com sucesso!
+2024-12-25 20:30:16,296 - INFO - Dados de VALE3.SA registrados com sucesso!
+2024-12-25 20:30:23,027 - INFO - Dados de ITUB4.SA registrados com sucesso!
+2024-12-25 20:30:31,035 - INFO - Dados de ITSA4.SA registrados com sucesso!
+2024-12-25 20:30:38,821 - INFO - Dados de GOLL4.SA registrados com sucesso!
+2024-12-25 20:30:46,635 - INFO - Dados de MGLU3.SA registrados com sucesso!
+2024-12-25 20:30:54,542 - INFO - Dados de BBDC3.SA registrados com sucesso!
+2024-12-25 20:31:01,040 - INFO - Dados de BBAS3.SA registrados com sucesso!
+2024-12-25 20:31:07,702 - INFO - Dados de ABEV3.SA registrados com sucesso!
+2024-12-25 20:31:15,470 - INFO - Dados de JBSS3.SA registrados com sucesso!
+2024-12-25 20:31:19,369 - INFO - Dados de WEGE3.SA registrados com sucesso!
+2024-12-25 20:31:21,315 - INFO - Dados de BPAC11.SA registrados com sucesso!
+2024-12-25 20:31:24,389 - INFO - Dados de SANB11.SA registrados com sucesso!
+2024-12-25 20:31:31,454 - INFO - Dados de SUZB3.SA registrados com sucesso!
+2024-12-25 20:31:39,018 - INFO - Dados de GGBR4.SA registrados com sucesso!
+2024-12-25 20:31:39,019 - INFO - Carregamento finalizado com sucesso no MongoDB!
+2024-12-25 20:31:56,324 - INFO - Dados inseridos na tabela com sucesso!

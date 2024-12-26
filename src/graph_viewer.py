@@ -111,6 +111,7 @@ def plot_graph(
 
     plt.gca().xaxis.set_major_locator(mdates.YearLocator(1))
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+
     plt.title(f"Comparação de {t1} e {t2} ao longo do tempo")
     plt.xlabel("Ano")
     plt.ylabel("Preço de Fechamento (R$)")

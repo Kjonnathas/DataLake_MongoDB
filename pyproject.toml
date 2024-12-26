@@ -15,6 +15,7 @@ pyodbc = "^5.2.0"
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.49"
 matplotlib = "^3.10.0"
+mkdocs-mermaid2-plugin = "^1.2.1"
 
 
 [build-system]

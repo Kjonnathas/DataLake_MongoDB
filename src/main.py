@@ -106,7 +106,7 @@ def connect_to_mongo(uri: str, database: str) -> Database:
     return database
 
 
-def delete_data_from_mongo(database: str) -> None:
+def delete_data_from_mongo(database: str, uri: str) -> None:
     """
     Remove todas as coleções de um banco de dados MongoDB.
 
@@ -124,6 +124,8 @@ def delete_data_from_mongo(database: str) -> None:
         - Diferentemente de `delete_many`, que remove apenas documentos, o método `drop` exclui a coleção inteira.
         - Mensagens de sucesso ou erros são registradas no sistema de logging.
     """
+    database = connect_to_mongo(uri, database)
+
     try:
         for collection_name in database.list_collection_names():
             collection = database[collection_name]
@@ -258,19 +260,23 @@ def load_to_mysql(con: pyodbc.Connection, dataframe: pd.DataFrame) -> None:
 
             cursor.execute(
                 """
-            CREATE TABLE IF NOT EXISTS tbl_historico_acoes (
-                id INT PRIMARY KEY AUTO_INCREMENT,
-                ticker VARCHAR(10) NOT NULL,
-                open FLOAT NOT NULL,
-                close FLOAT NOT NULL,
-                high FLOAT NOT NULL,
-                low FLOAT NOT NULL,
-                volume FLOAT NOT NULL,
-                data DATE NOT NULL
-            );
-            TRUNCATE TABLE tbl_historico_acoes;
-            """,
-                multi=True,
+                CREATE TABLE IF NOT EXISTS tbl_historico_acoes (
+                    id INT PRIMARY KEY AUTO_INCREMENT,
+                    ticker VARCHAR(10) NOT NULL,
+                    open FLOAT NOT NULL,
+                    close FLOAT NOT NULL,
+                    high FLOAT NOT NULL,
+                    low FLOAT NOT NULL,
+                    volume FLOAT NOT NULL,
+                    data DATE NOT NULL
+                    );
+                """
+            )
+
+            cursor.execute(
+                """
+                    TRUNCATE TABLE tbl_historico_acoes;
+                """
             )
 
             for _, row in df.iterrows():
@@ -312,7 +318,7 @@ def main(tickers: List, start_data: str, end_data: str) -> None:
     mongo_db = os.getenv("MONGO_DATABASE")
 
     data = extract_data_yfinance(tickers, start_data=start_data, end_data=end_data)
-    delete_data_from_mongo(mongo_db)
+    delete_data_from_mongo(mongo_db, mongo_uri)
     transform_data = transform_dataframe(data)
     load_to_mongo(transform_data, mongo_db, mongo_uri)
     conn_mysql = connect_to_mysql(driver, server, database, username, password)
