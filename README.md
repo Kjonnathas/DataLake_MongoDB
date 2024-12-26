@@ -165,15 +165,21 @@ poetry add pymongo python-dotenv yfinance pandas pyodbc matplotlib
 
 15. Agora abra o seu DBeaver e clique em um botão logo abaixo da aba "Arquivo". Abrirá o dropdown e selecione "Nova Conexão". Escolha a opção "MySQL" e clique em avançar. Por padrão já vai vir com o nome do host como localhost, a porta como 3306 e o nome de usuário como root. Sendo assim, apenas insira a sua senha que foi definida ao baixar e instalar o mysql e clique em avançar.
 
-16. Neste momento, com todas as configurações feitas e todos os client já configurados, vamos executar os dois scripts python que fazem a mágica acontecer. Portanto, navegue até a pasta src e digite:
+16. Com a conexão feita, crie o banco de dados. Faça o seguinte:
+
+```bash
+CREATE DATABASE db_acoes
+```
+
+17. Neste momento, com todas as configurações feitas e todos os client já configurados, vamos executar os dois scripts python que fazem a mágica acontecer. Portanto, navegue até a pasta src e digite:
 
 ```bash
 python main.py
 ```
 
-17. Depois que o código acima finalizar a execução, verique no MongoDB Compass se os dados foram carregados fazendo um refresh e também verifique no DBeaver se os dados foram carregados na tabela, neste caso basta apenas clicar com o botão direito sobre o banco de dados e selecionar a opção "Editor SQL" e em sequência "Novo script SQL". Depois disso, com o editor aberto, você pode usar o seguinte código SQL para visualizar os dados `SELECT * FROM db_acoes.tbl_historico_acoes;` e clicar no botão de run ao lado ou selecionar o código e "CRTL + ENTER".
+18. Depois que o código acima finalizar a execução, verique no MongoDB Compass se os dados foram carregados fazendo um refresh e também verifique no DBeaver se os dados foram carregados na tabela, neste caso basta apenas clicar com o botão direito sobre o banco de dados e selecionar a opção "Editor SQL" e em sequência "Novo script SQL". Depois disso, com o editor aberto, você pode usar o seguinte código SQL para visualizar os dados `SELECT * FROM db_acoes.tbl_historico_acoes;` e clicar no botão de run ao lado ou selecionar o código e "CRTL + ENTER".
 
-18. Se tudo estiver carregado com sucesso, agora vamos executar o outro script que buscará os dados no MySQL, gerará um gráfico de linhas comparando duas ações ao longo do tempo e, por fim, salvará uma imagem png desse gráfico. Então, digite:
+19. Se tudo estiver carregado com sucesso, agora vamos executar o outro script que buscará os dados no MySQL, gerará um gráfico de linhas comparando duas ações ao longo do tempo e, por fim, salvará uma imagem png desse gráfico. Então, digite:
 
 ```bash
 python graph_viewer.py
