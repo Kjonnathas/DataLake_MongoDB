@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+
 # Descrição do Projeto 📋
 
 O projeto tem como objetivo demonstrar a integração entre diferentes tecnologias, incluindo o uso de APIs, armazenamento de dados em bancos de dados NoSQL (MongoDB) e relacionais (MySQL), além de apresentar visualizações de dados utilizando a biblioteca Matplotlib do Python.
@@ -9,13 +14,14 @@ O objetivo do projeto é praticar o uso de APIs e explorar o funcionamento de ba
 # 3. Tecnologias Utilizadas 💻
 
 - Git
+- Github Pages
 - SQL
 - DBeaver
 - Python
 - MongoDB Atlas
 - MondoDB Compass
 
-# 4. Descrição das Tecnologias no Projeto
+# 4. Descrição das Tecnologias no Projeto 📝
 
 Para o projeto, foi criado um banco de dados não relacional utilizando o MongoDB 🗄️, com o servidor hospedado no MongoDB Atlas 🌐, uma plataforma de banco de dados como serviço que oferece uma solução escalável e gerenciada para armazenar dados em coleções. A conexão com o banco de dados foi realizada por meio da URI fornecida pelo Atlas, utilizando o MongoDB Compass 🧭, uma ferramenta GUI que facilita a administração e visualização dos dados armazenados no MongoDB. O Compass é bastante útil para explorar e consultar os dados de forma intuitiva, além de permitir a criação e modificação de coleções e índices.
 
@@ -172,3 +178,7 @@ python main.py
 ```bash
 python graph_viewer.py
 ```
+
+8. Licença
+
+Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
