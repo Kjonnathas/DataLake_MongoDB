@@ -179,6 +179,6 @@ python main.py
 python graph_viewer.py
 ```
 
-8. Licença
+# 8. Licença
 
 Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
