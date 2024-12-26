@@ -153,11 +153,11 @@ https://kjonnathas.github.io/DataLake_MongoDB
         - LOG_PATH=coloque_o_caminho_completo_da_pasta_de_log
         - IMG_PATH=coloque_o_caminho_completo_da_pasta_img
 
-  13. Ao criar a conta no MongoDB Atlas escolha a opção de ter um servidor free. Depois disso, será fornecida uma URI de conexão para seu servidor. É importante guardar essa URI para podermos conectar no MongoDB Compass, pois não estaremos nos conectando na máquina local que é o localhost. O servidor está hospedado na AWS pelo MongoDB Atlas;
+  13. Ao criar a conta no MongoDB Atlas escolha a opção de ter um servidor free. Depois disso, será fornecida uma URI de conexão para seu servidor. É importante guardar essa URI para podermos conectar no MongoDB Compass, pois não estaremos nos conectando na máquina local que é o localhost. O servidor está hospedado na AWS pelo MongoDB Atlas.
 
-  14. Abra o seu MongoDB Compass e faça a conexão utilizando a sua URI. Não será necessário criar o banco de dados e nem as coleções, pois serão criadas em tempo de execução ao rodar o script "main.py"
+  14. Abra o seu MongoDB Compass e faça a conexão utilizando a sua URI. Não será necessário criar o banco de dados e nem as coleções, pois serão criadas em tempo de execução ao rodar o script "main.py".
 
-  15. Agora abra o seu DBeaver e clique em um botão logo abaixo da aba "Arquivo". Abrirá o dropdown e selecione "Nova Conexão". Escolha a opção "MySQL" e clique em avançar. Por padrão já vai vir com o nome do host como localhost, a porta como 3306 e o nome de usuário como root. Sendo assim, apenas insira a sua senha que foi definida ao baixar e instalar o mysql e clique em avançar;
+  15. Agora abra o seu DBeaver e clique em um botão logo abaixo da aba "Arquivo". Abrirá o dropdown e selecione "Nova Conexão". Escolha a opção "MySQL" e clique em avançar. Por padrão já vai vir com o nome do host como localhost, a porta como 3306 e o nome de usuário como root. Sendo assim, apenas insira a sua senha que foi definida ao baixar e instalar o mysql e clique em avançar.
 
   16. Neste momento, com todas as configurações feitas e todos os client já configurados, vamos executar os dois scripts python que fazem a mágica acontecer. Portanto, navegue até a pasta src e digite:
 
@@ -166,3 +166,9 @@ https://kjonnathas.github.io/DataLake_MongoDB
   ```
 
   17. Depois que o código acima finalizar a execução, verique no MongoDB Compass se os dados foram carregados fazendo um refresh e também verifique no DBeaver se os dados foram carregados na tabela, neste caso basta apenas clicar com o botão direito sobre o banco de dados e selecionar a opção "Editor SQL" e em sequência "Novo script SQL". Depois disso, com o editor aberto, você pode usar o seguinte código SQL para visualizar os dados `SELECT * FROM db_acoes.tbl_historico_acoes;` e clicar no botão de run ao lado ou selecionar o código e "CRTL + ENTER".
+
+  18. Se tudo estiver carregado com sucesso, agora vamos executar o outro script que buscará os dados no MySQL, gerará um gráfico de linhas comparando duas ações ao longo do tempo e, por fim, salvará uma imagem png desse gráfico. Então, digite:
+
+  ```bash
+  python graph_viewer.py
+  ```
