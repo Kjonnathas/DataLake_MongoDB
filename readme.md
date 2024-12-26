@@ -65,15 +65,15 @@ https://kjonnathas.github.io/DataLake_MongoDB
 
   b. Baixar e instalar o MongoDB Compass;
 
-  Link para download: https://www.mongodb.com/try/download/compass
+  - Link para download: https://www.mongodb.com/try/download/compass
 
   c. Baixar e instalar o DBeaver;
 
-  Link para download: https://dbeaver.io/download/
+  - Link para download: https://dbeaver.io/download/
 
   d. Baixar e instalar o MySQL;
 
-  Link para download: https://dev.mysql.com/downloads/mysql/
+  - Link para download: https://dev.mysql.com/downloads/mysql/
 
 - Passo a passo:
 
