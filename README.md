@@ -61,7 +61,7 @@ Essa combinação de tecnologias — MongoDB Atlas e Compass 🌐🧭, Python �
 
 # 6. Visite a Documentação do Projeto
 
-https://kjonnathas.github.io/DataLake_MongoDB
+https://kjonnathas.github.io/DataLake_MongoDB/home/
 
 # 7. Instalação e Configuração 🔗
 
