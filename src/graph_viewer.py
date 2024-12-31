@@ -1,11 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-from main import connect_to_mysql
 from warnings import filterwarnings
 import os
 from pyodbc import Connection
 from typing import Tuple
+
+from main import connect_to_mysql
+
 
 filterwarnings("ignore")
 
@@ -52,6 +54,7 @@ def extract_data_from_mysql(
 
     except Exception as e:
         print(f"Ocorreu um erro ao extrair os dados do banco de dados.\n\nErro: {e}")
+
     finally:
         if "cursor" in locals():
             cursor.close()

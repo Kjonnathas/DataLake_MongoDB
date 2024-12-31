@@ -27,21 +27,24 @@ logging.basicConfig(
 
 
 def extract_data_yfinance(
-    ticker_list: List, start_data: str, end_data: str
+    ticker_list: List, start_date: str, end_date: str
 ) -> list | None:
     """
     Extrai dados históricos de ações do Yahoo Finance para uma lista de tickers fornecidos.
 
     Args:
+    -----
         ticker_list (list): Lista de tickers de ações para os quais os dados serão recuperados.
         start_data (str): Data de início para o período de dados a ser recuperado (formato 'YYYY-MM-DD').
         end_data (str): Data de fim para o período de dados a ser recuperado (formato 'YYYY-MM-DD').
 
 
     Returns:
+    --------
         list | None: Lista de DataFrames pandas, cada um contendo os dados históricos de uma ação, ou None caso ocorra um erro.
 
     Notas:
+    ------
         - Os dados são recuperados para o período de 1º de janeiro de 2010 até 31 de dezembro de 2015.
         - Os DataFrames são enriquecidos com uma coluna "Ticker" para identificar a ação.
         - A função usa a biblioteca `yfinance` para realizar o download dos dados históricos.
@@ -52,7 +55,7 @@ def extract_data_yfinance(
 
         for ticker in ticker_list:
             ticker_data = yf.download(
-                ticker, start=start_data, end=end_data, group_by="ticker"
+                ticker, start=start_date, end=end_date, group_by="ticker"
             )
 
             ticker_data.columns = ticker_data.columns.droplevel(0)
@@ -308,7 +311,7 @@ def load_to_mysql(con: pyodbc.Connection, dataframe: pd.DataFrame) -> None:
             con.close()
 
 
-def main(tickers: List, start_data: str, end_data: str) -> None:
+def main(tickers: List, start_date: str, end_date: str) -> None:
     driver = os.getenv("MYSQL_DRIVER")
     server = os.getenv("MYSQL_SERVER")
     database = os.getenv("MYSQL_DATABASE")
@@ -317,7 +320,7 @@ def main(tickers: List, start_data: str, end_data: str) -> None:
     mongo_uri = os.getenv("MONGO_URI")
     mongo_db = os.getenv("MONGO_DATABASE")
 
-    data = extract_data_yfinance(tickers, start_data=start_data, end_data=end_data)
+    data = extract_data_yfinance(tickers, start_data=start_date, end_data=end_date)
     delete_data_from_mongo(mongo_db, mongo_uri)
     transform_data = transform_dataframe(data)
     load_to_mongo(transform_data, mongo_db, mongo_uri)
@@ -345,4 +348,4 @@ if __name__ == "__main__":
         "GGBR4.SA",
     ]
 
-    main(tickers=tickers, start_data="2010-01-01", end_data="2024-11-30")
+    main(tickers=tickers, start_date="2010-01-01", end_date="2024-11-30")
